@@ -20,7 +20,8 @@ public class Paiement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPaiement;
+    @Column(name = "id")
+    private Long id;
 
     private BigDecimal montant;
 

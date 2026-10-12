@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Table(name = "maintenance")
 @Getter
 @Setter
-@NoArgsConstructorf
+@NoArgsConstructor
 @AllArgsConstructor
 public class Maintenance {
 
@@ -29,4 +29,5 @@ public class Maintenance {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Vehicule vehicule;
+    
 }
