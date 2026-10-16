@@ -25,10 +25,7 @@ public class EquipementServiceImpl implements IEquipementService {
         return equipementRepository.findAll();
     }
 
-    @Override
-    public Optional<Equipement> findById(Long id) {
-        return equipementRepository.findById(id);
-    }
+
 
     @Override
     public void deleteById(Long id) {

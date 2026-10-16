@@ -25,9 +25,10 @@ public class EmployeServiceImpl implements IEmployeService {
         return employeRepository.findAll();
     }
 
+
     @Override
-    public Optional<Employe> findById(Long id) {
-        return employeRepository.findById(id);
+    public Employe findById(Long id) {
+        return employeRepository.findById(id).orElse(null);
     }
 
     @Override

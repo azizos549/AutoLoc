@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+//Tu utilises déjà l'injection par constructeur
 @RequiredArgsConstructor
 public class AgenceServiceImpl implements IAgenceService {
 
@@ -26,10 +27,9 @@ public class AgenceServiceImpl implements IAgenceService {
     }
 
     @Override
-    public Optional<Agence> findById(Long id) {
-        return agenceRepository.findById(id);
+    public Agence findById(Long id) {
+        return agenceRepository.findById(id).orElse(null);
     }
-
     @Override
     public void deleteById(Long id) {
         agenceRepository.deleteById(id);

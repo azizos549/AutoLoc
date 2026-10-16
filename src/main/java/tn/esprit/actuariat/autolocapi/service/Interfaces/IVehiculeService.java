@@ -3,7 +3,7 @@ package tn.esprit.actuariat.autolocapi.service.Interfaces;
 import tn.esprit.actuariat.autolocapi.domain.Vehicule;
 
 import java.util.List;
-import java.util.Optional;
+
 
 public interface IVehiculeService {
 
@@ -11,7 +11,7 @@ public interface IVehiculeService {
 
     List<Vehicule> findAll();
 
-    Optional<Vehicule> findById(Long id);
+    Vehicule findById(Long id);
 
     void deleteById(Long id);
 }

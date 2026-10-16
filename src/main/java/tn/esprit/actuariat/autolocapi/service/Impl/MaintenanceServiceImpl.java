@@ -26,8 +26,8 @@ public class MaintenanceServiceImpl implements IMaintenanceService {
     }
 
     @Override
-    public Optional<Maintenance> findById(Long id) {
-        return maintenanceRepository.findById(id);
+    public Maintenance findById(Long id) {
+        return maintenanceRepository.findById(id).orElse(null);
     }
 
     @Override

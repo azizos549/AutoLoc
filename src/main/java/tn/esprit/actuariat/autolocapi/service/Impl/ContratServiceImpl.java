@@ -24,10 +24,9 @@ public class ContratServiceImpl implements IContratService {
     public List<Contrat> findAll() {
         return contratRepository.findAll();
     }
-
     @Override
-    public Optional<Contrat> findById(Long id) {
-        return contratRepository.findById(id);
+    public Contrat findById(Long id) {
+        return contratRepository.findById(id).orElse(null);
     }
 
     @Override

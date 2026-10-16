@@ -24,12 +24,10 @@ public class PaiementServiceImpl implements IPaiementService {
     public List<Paiement> findAll() {
         return paiementRepository.findAll();
     }
-
     @Override
-    public Optional<Paiement> findById(Long id) {
-        return paiementRepository.findById(id);
+    public Paiement findById(Long id) {
+        return paiementRepository.findById(id).orElse(null);
     }
-
     @Override
     public void deleteById(Long id) {
         paiementRepository.deleteById(id);

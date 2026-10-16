@@ -26,9 +26,10 @@ public class ClientServiceImpl implements IClientService {
     }
 
     @Override
-    public Optional<Client> findById(Long id) {
-        return clientRepository.findById(id);
+    public Client findById(Long id) {
+        return clientRepository.findById(id).orElse(null);
     }
+
 
     @Override
     public void deleteById(Long id) {

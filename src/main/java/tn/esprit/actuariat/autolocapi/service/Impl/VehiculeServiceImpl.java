@@ -7,7 +7,7 @@ import tn.esprit.actuariat.autolocapi.repository.VehiculeRepository;
 import tn.esprit.actuariat.autolocapi.service.Interfaces.IVehiculeService;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -26,8 +26,8 @@ public class VehiculeServiceImpl implements IVehiculeService {
     }
 
     @Override
-    public Optional<Vehicule> findById(Long id) {
-        return vehiculeRepository.findById(id);
+    public Vehicule findById(Long id) {
+        return vehiculeRepository.findById(id).orElse(null);
     }
 
     @Override
