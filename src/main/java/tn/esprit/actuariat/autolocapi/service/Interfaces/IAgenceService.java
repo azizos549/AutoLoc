@@ -14,4 +14,6 @@ public interface IAgenceService {
     Optional<Agence> findById(Long id);
 
     void deleteById(Long id);
+    List<Agence> findByVille(String ville);
+    List<Agence> findByNomEndingWith(String nom);
 }

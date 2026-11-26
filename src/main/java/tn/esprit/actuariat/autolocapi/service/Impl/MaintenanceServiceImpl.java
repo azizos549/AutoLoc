@@ -6,6 +6,7 @@ import tn.esprit.actuariat.autolocapi.domain.Maintenance;
 import tn.esprit.actuariat.autolocapi.repository.MaintenanceRepository;
 import tn.esprit.actuariat.autolocapi.service.Interfaces.IMaintenanceService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,5 +34,13 @@ public class MaintenanceServiceImpl implements IMaintenanceService {
     @Override
     public void deleteById(Long id) {
         maintenanceRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Maintenance> findByDateFinBetween(
+            LocalDate dateDebut,
+            LocalDate dateFin) {
+
+        return maintenanceRepository.findByDateFinBetween(dateDebut, dateFin);
     }
 }

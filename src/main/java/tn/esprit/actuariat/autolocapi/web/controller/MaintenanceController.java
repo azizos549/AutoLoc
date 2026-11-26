@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import tn.esprit.actuariat.autolocapi.domain.Maintenance;
 import tn.esprit.actuariat.autolocapi.service.Interfaces.IMaintenanceService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -48,5 +49,13 @@ public class MaintenanceController {
         }
         maintenanceService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/date-fin/entre")
+    public List<Maintenance> getByDateFinBetween(
+            @RequestParam LocalDate dateDebut,
+            @RequestParam LocalDate dateFin) {
+
+        return maintenanceService.findByDateFinBetween(dateDebut, dateFin);
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import tn.esprit.actuariat.autolocapi.domain.Reservation;
 import tn.esprit.actuariat.autolocapi.service.Interfaces.IReservationService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -49,5 +50,19 @@ public class ReservationController {
         }
         reservationService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/date-debut/apres/{date}")
+    public List<Reservation> getByDateDebutAfter(
+            @PathVariable LocalDate date) {
+
+        return reservationService.findByDateDebutAfter(date);
+    }
+
+    @GetMapping("/date-fin/avant/{date}")
+    public List<Reservation> getByDateFinBefore(
+            @PathVariable LocalDate date) {
+
+        return reservationService.findByDateFinBefore(date);
     }
 }

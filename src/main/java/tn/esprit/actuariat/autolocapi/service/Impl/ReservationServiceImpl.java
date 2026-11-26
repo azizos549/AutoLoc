@@ -6,6 +6,7 @@ import tn.esprit.actuariat.autolocapi.domain.Reservation;
 import tn.esprit.actuariat.autolocapi.repository.ReservationRepository;
 import tn.esprit.actuariat.autolocapi.service.Interfaces.IReservationService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,4 +35,16 @@ public class ReservationServiceImpl implements IReservationService {
     public void deleteById(Long id) {
         reservationRepository.deleteById(id);
     }
+
+    @Override
+    public List<Reservation> findByDateDebutAfter(LocalDate date) {
+        return reservationRepository.findByDateDebutAfter(date);
+    }
+
+    @Override
+    public List<Reservation> findByDateFinBefore(LocalDate date) {
+        return reservationRepository.findByDateFinBefore(date);
+    }
+
+
 }

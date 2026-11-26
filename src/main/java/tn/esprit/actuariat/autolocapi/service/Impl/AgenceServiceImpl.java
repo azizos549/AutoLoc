@@ -34,4 +34,14 @@ public class AgenceServiceImpl implements IAgenceService {
     public void deleteById(Long id) {
         agenceRepository.deleteById(id);
     }
+
+    @Override
+    public List<Agence> findByVille(String ville) {
+        return agenceRepository.findByVille(ville);
+    }
+
+    @Override
+    public List<Agence> findByNomEndingWith(String nom) {
+        return agenceRepository.findByNomEndingWith(nom);
+    }
 }
